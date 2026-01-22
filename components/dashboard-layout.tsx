@@ -48,7 +48,7 @@ function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Mobile header */}
-      <div className="lg:hidden flex items-center justify-between p-4 border-b border-border bg-card">
+      <div className={`lg:hidden relative ${sidebarOpen ? 'z-30' : 'z-50'} flex items-center justify-between p-4 border-b border-border bg-card`}>
         <h1 className="text-xl font-bold">Prodexy</h1>
         <div className="flex items-center gap-2">
           <NotificationBell />
@@ -64,8 +64,7 @@ function DashboardLayout({ children }: DashboardLayoutProps) {
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-card border-r border-border transform transition-transform duration-200 ease-in-out lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-card border-r border-border transform transition-transform duration-200 ease-in-out lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex flex-col h-full">
           <div className="p-6 border-b border-border hidden lg:block">
